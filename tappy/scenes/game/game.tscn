@@ -9,8 +9,6 @@
 [node name="Game" type="Node2D"]
 script = ExtResource("1_44i0t")
 
-[node name="Pipes_Container" type="Node" parent="."]
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(126, 428)
 texture = ExtResource("1_vcpoh")
@@ -36,5 +34,7 @@ position = Vector2(525, 540)
 [node name="Pipes_Spawn_Timer" type="Timer" parent="."]
 wait_time = 1.2
 autostart = true
+
+[node name="Pipes_Container" type="Node" parent="."]
 
 [connection signal="timeout" from="Pipes_Spawn_Timer" to="." method="spawn_timer_timeout"]

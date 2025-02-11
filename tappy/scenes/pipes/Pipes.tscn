@@ -18,12 +18,14 @@ position = Vector2(0, 80)
 [node name="Laser" parent="." instance=ExtResource("1_thggs")]
 position = Vector2(0, 1)
 
+[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lv5gv")
+volume_db = -10.32
+
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(50, 1)
 
-[node name="ScoreSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_lv5gv")
-
 [connection signal="body_entered" from="Pipe" to="." method="_on_pipe_body_entered"]
 [connection signal="body_entered" from="Pipe2" to="." method="_on_pipe_body_entered"]
+[connection signal="body_entered" from="Laser" to="." method="_on_laser_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="notifier_screen_exited"]
